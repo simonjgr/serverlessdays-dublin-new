@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="call-to-action mt-24 mb-24 flex flex-col items-center gap-12 rounded-xl p-12 md:p-24">
+    <h2 class="text-center text-3xl md:text-5xl">Book your seat now</h2>
+    <a target="_blank" href="https://www.eventbrite.com/e/serverlessdays-dublin-2023-tickets-562937881357" class="text-center text-lg"> Tickets</a>
+  </div>
+</div>
+  <!--  
+
+    This is the style sheet for this page
+
+  -->
+<style lang="scss">
+  .call-to-action {
+    color: var(--neutral-900);
+    // background-image: linear-gradient(to right, #009a49, #ffffff, #f58220);
+    background-image: linear-gradient(to right, #88b8fd, #ffffff, #88b8fd);
+  }
+
+  .call-to-action a:not(button),
+  .call-to-action a:not(button):visited {
+    padding: 1rem;
+    color: var(--neutral-900);
+    font-weight: bold;
+    border: 3px solid var(--neutral-900);
+    border-radius: 3px;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+
+    &:where(:hover, :focus) {
+      color: var(--neutral-100);
+      background-color: var(--neutral-900);
+      text-decoration: underline;
+    }
+  }
+</style>

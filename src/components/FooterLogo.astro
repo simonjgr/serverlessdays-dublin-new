@@ -1,0 +1,37 @@
+---
+import ResponsiveToggle from './ResponsiveToggle.astro'
+/* import { DarkMode } from 'accessible-astro-components' */
+---
+
+<div class="container">
+    <a href="/" class="flex items-center gap-0 !no-underline">
+      <img class='footer-logo' src={(await import('../assets/img/logo.svg')).default} alt="ServerlessDays Dublin Logo" width="300" height="50" />
+    </a>
+  <!-- <div class="container">
+    <span class="text-xl">23 August 2023<br />
+    The Guinness Storehouse, <br />
+    St. James's Gate, Dublin 8</span>
+  </div> -->
+</div>
+  <!--  
+
+    This is the style sheet for this page
+
+  -->
+<style lang="scss">
+  
+  .footer-logo {
+    margin: auto;
+  }
+  
+    svg {
+      width: 30px;
+      margin-top: 4px;
+    }
+
+    svg path {
+      fill: var(--action-color);
+      transition: fill 0.2s ease-in-out;
+    }
+
+</style>

@@ -1,0 +1,22 @@
+// | -------------------------------------------------------------
+// | Container
+// | -------------------------------------------------------------
+
+@use "breakpoint" as *;
+
+.container-mascots {
+  margin: 0 auto;
+  max-width: 70%;
+
+  @include breakpoint(medium) {
+    padding: 0 2rem;
+  }
+
+  @include breakpoint(large) {
+    max-width: 650px;
+  }
+
+  &.stretch {
+    max-width: 70%;
+  }
+}

@@ -1,0 +1,425 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import Hero from '../components/Hero.astro'
+import Speaker from '../components/Speaker.astro'
+import Organiser from '../components/Organiser.astro'
+// import Counter from '../components/Counter.astro'
+import CounterDates from '../components/CounterDates.astro'
+import ContentMedia from '../components/ContentMedia.astro'
+import HeadlineSponsors from '../components/HeadlineSponsors.astro'
+import GoldSponsors from '../components/GoldSponsors.astro'
+import SilverSponsors from '../components/SilverSponsors.astro'
+import CommunitySponsors from '../components/CommunitySponsors.astro'
+import { Icon } from 'astro-icon'
+---
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6DE8E1DZJM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6DE8E1DZJM');
+</script>
+
+<DefaultLayout title="Home">
+  <Hero />
+  <!--  
+
+    This is the important dates section and is edited in the CountersDates.astro file under components
+
+  -->
+  <section class="mt-24 mb-24">
+    <div class="container">
+      <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-6">
+        <CounterDates impdate="20 Apr 2023" datedis="CFP Opens" />
+        <CounterDates impdate="20 Apr 2023" datedis="Early Bird Tickets on Sale" />
+        <CounterDates impdate="22 May 2023" datedis="CFP Closes" />
+        <CounterDates impdate="22 Jun 2023" datedis="Speakers Announced" />
+        <CounterDates impdate="22 Aug 2023" datedis="Workshops" />
+        <CounterDates impdate="23 Aug 2023" datedis="ServerlessDays Dublin" />
+      </div>
+    </div>
+  </section>
+  <!--  
+
+    This is the venue section and is edited in the ContentMedia.astro file under components
+
+  -->
+  <section>
+    <ContentMedia imgSrc="/guinness-storehouse.webp" reverseImg={true}>
+      <h2 class="mb-5 text-5xl">Venue</h2>
+        <p class="text-xl">
+          The Guinness Storehouse is consistently ranked as the most visited tourist attraction in Ireland. 
+          Situated at St. James&apos;s Gate Brewery in Dublin, the Storehouse spans across an amazing 7 floors, each exhibiting 
+          different displays of information about the history of Guinness encompassing the four key ingredients, 
+          the brewery founder Arthur Guinness, Guinness advertising and more.
+        </p>
+        <div class="flex flex-col gap-3 min-[50px]:flex-row">
+          <a target="_blank"
+            class="button has-icon color-secondary"
+            href="https://goo.gl/maps/nUBX9V32q8ptgeMM8">
+            <Icon pack="ion" name="map-outline" />
+            Directions
+          </a>
+        </div>
+    </ContentMedia>
+  </section>
+  <!--  
+
+    This is the call for papers section
+
+  -->
+  <section>
+    <div class="container">
+      <div class="call-to-action mt-24 mb-32 flex flex-col items-center gap-12 rounded-xl p-12 md:p-24">
+        <h2 class="text-center text-3xl md:text-5xl">Give a talk</h2>
+        <a target="_blank" href="https://www.papercall.io/serverlessdays-dublin-2023" class="text-center text-lg">Call for Papers</a>
+      </div>
+    </div>
+  </section>
+  <!--  
+
+    This is the Speakers section and is edited in the Speaker.astro file under components
+
+  -->
+  <section class="my-24">
+    <div class="container">
+      <h2 id="speakeers" class="mb-16 text-5xl">Speakers</h2>
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+        <Speaker>
+          <img class="speaker-image-border" height="100px" width="100px" src="julian-wood.jpeg" /><br />
+          <h3>Julian Wood</h3>
+          Serverless Developer Advocate<br />
+          Amazon Web Services<br /><br />
+            <div style="float: left; padding-right: 8px;">
+              <a target="_blank" href="https://www.linkedin.com/in/julianrwood">
+                <img class="social-icons" src="linkedin-logo.svg" />
+              </a>
+            </div>
+            <div>
+              <a target="_blank" href="https://twitter.com/julian_wood">
+                <img class="social-icons" src="twitter-logo.svg" />
+              </a>
+            </div> 
+        </Speaker>
+        <Speaker>
+          <img class="speaker-image-border" height="100px" width="100px" src="ben-ellerby.jpeg" /><br />
+          <h3>Ben Ellerby</h3>
+          Founder / AWS Serverless Hero<br />
+          aleios<br /><br />
+          <div style="float: left; padding-right: 8px;">
+            <a target="_blank" href="https://www.linkedin.com/in/benjaminellerby/">
+              <img class="social-icons" src="linkedin-logo.svg" />
+            </a>
+          </div>
+          <div>
+            <a target="_blank" href="https://twitter.com/EllerbyBen">
+              <img class="social-icons" src="twitter-logo.svg" />
+            </a>
+          </div> 
+        </Speaker>
+        <Speaker> 
+          <img class="speaker-image-border" height="100px" width="100px" src="jeremy-daly.jpeg" /><br />
+          <h3>Jeremy Daly</h3>
+          CEO and Co-founder / AWS Serverless Hero / Host of Serverless Chats<br />
+          Ampt<br /><br />
+          <div style="float: left; padding-right: 8px;">
+            <a target="_blank" href="https://www.linkedin.com/in/jeremydaly/">
+              <img class="social-icons" src="linkedin-logo.svg" />
+            </a>
+          </div>
+          <div>
+            <a target="_blank" href="https://twitter.com/jeremy_daly">
+              <img class="social-icons" src="twitter-logo.svg" />
+            </a>
+          </div>
+        </Speaker>
+        <Speaker>
+          <img class="speaker-image-border" height="100px" width="100px" src="yan-cui.jpeg" /><br />
+          <h3>Yan Cui</h3>
+          Founder / AWS Serverless Hero<br />
+          The Burning Monk<br /><br />
+          <div style="float: left; padding-right: 8px;">
+            <a target="_blank" href="https://www.linkedin.com/in/theburningmonk/">
+              <img class="social-icons" src="linkedin-logo.svg" />
+            </a>
+          </div> 
+          <div>
+            <a target="_blank" href="https://twitter.com/theburningmonk">
+              <img class="social-icons" src="twitter-logo.svg" />
+            </a>
+          </div>  
+        </Speaker>
+        <Speaker>
+          <img class="speaker-image-border" height="100px" width="100px" src="luciano-mammino.jpeg" /><br />
+          <h3>Luciano Mammino</h3>
+          Senior Architect<br />
+          fourTheorem<br /><br />
+          <div style="float: left; padding-right: 8px;">
+            <a target="_blank" href="https://www.linkedin.com/in/lucianomammino/">
+              <img class="social-icons" src="linkedin-logo.svg" />
+            </a>
+          </div>
+          <div>
+            <a target="_blank" href="https://twitter.com/loige">
+              <img class="social-icons" src="twitter-logo.svg" />
+            </a>
+          </div>
+        </Speaker>
+        <Speaker>
+          <img class="speaker-image-border" height="100px" width="100px" src="simon-green.jpeg" /><br />
+          <h3>Simon Green</h3>
+          Senior Cloud & Security Architect<br />
+          Accenture | Cloud First<br /><br />
+          <div style="float: left; padding-right: 8px;">
+            <a target="_blank" href="https://www.linkedin.com/in/simonjgr/">
+              <img class="social-icons" src="linkedin-logo.svg" />
+            </a>
+          </div> 
+        </Speaker>
+        <Speaker>
+          <img class="speaker-image-border" height="100px" width="100px" src="marc-schroeter.jpeg" /><br />
+          <h3>Marc Schroeter</h3>
+          CEO & Founder / Co-Founder <br />
+          globaldatanet / Serverless Summit<br /><br />
+          <div style="float: left; padding-right: 8px;">
+            <a target="_blank" href="https://www.linkedin.com/in/marcschroeter/">
+              <img class="social-icons" src="linkedin-logo.svg" />
+            </a>
+          </div> 
+          <div>
+            <a target="_blank" href="https://twitter.com/marc_schroeter/">
+              <img class="social-icons" src="twitter-logo.svg" />
+            </a>
+          </div>
+        </Speaker>
+        <Speaker>
+          <img class="speaker-image-border" height="100px" width="100px" src="sheen.brisals.jpeg" /><br />
+          <h3>Sheen Brisals</h3>
+          Senior Engineering Manager <br />
+          The LEGO Group<br /><br />
+          <div style="float: left; padding-right: 8px;">
+            <a target="_blank" href="https://www.linkedin.com/in/marcschroeter/">
+              <img class="social-icons" src="linkedin-logo.svg" />
+            </a>
+          </div> 
+          <div>
+            <a target="_blank" href="https://twitter.com/marc_schroeter/">
+              <img class="social-icons" src="twitter-logo.svg" />
+            </a>
+          </div>
+        </Speaker>
+        <Speaker>
+          <img class="speaker-image-border" height="100px" width="100px" src="eric.johnson.jpeg" /><br />
+          <h3>Eric Johnson</h3>
+          Principal Developer Advocate - Serverless <br />
+          Amazon Web Services<br /><br />
+          <div style="float: left; padding-right: 8px;">
+            <a target="_blank" href="https://www.linkedin.com/in/singledigit/">
+              <img class="social-icons" src="linkedin-logo.svg" />
+            </a>
+          </div> 
+          <div>
+            <a target="_blank" href="https://twitter.com/edjgeek">
+              <img class="social-icons" src="twitter-logo.svg" />
+            </a>
+          </div>
+        </Speaker>
+      </div>
+    </div>
+  </section>
+  <!--  
+
+    This is the sponsors sections
+
+  -->
+  <section class="mt-32 mb-32">
+    <div class="container">
+      <h2 id="sponsors" class="mb-24 text-5xl">Sponsors</h2>
+        <HeadlineSponsors>
+          <!-- This is the headline sponsors section and is edited in the HeadlineSponsors.astro file under components -->
+        </HeadlineSponsors>
+    </div>
+    </section>
+    <section>
+      <div class="container">
+        <GoldSponsors>
+          <!-- This is the gold sponsors section and is edited in the GoldSponsors.astro file under components -->
+        </GoldSponsors>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <SilverSponsors>
+          <!-- This is the silver sponsors section and is edited in the SilverSponsors.astro file under components -->
+        </SilverSponsors>
+      </div>
+    </section>  
+    <section>
+      <div class="container">
+        <CommunitySponsors>
+          <!-- This is the community sponsors section and is edited in the CommunitySponsors.astro file under components -->
+        </CommunitySponsors>
+      </div>
+  </section>  
+  <!--  
+
+    This is the Organisers section and is edited in the Organiser.astro file under components
+
+  -->
+  <section class="my-24">
+    <div class="container">
+      <h2 id="organisers" class="mb-24 text-5xl">Organisers</h2>
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+        <Organiser>
+          <img class="organiser-image-border" height="100px" width="100px" src="simon-green.jpeg" /><br />
+          <h3>Simon Green</h3>
+          Senior Cloud & Security Architect<br />
+          Accenture | Cloud First<br /><br />
+          <div style="float: left; padding-right: 8px;">
+            <a target="_blank" href="https://www.linkedin.com/in/simonjgr/">
+              <img class="social-icons" src="linkedin-logo.svg" />
+            </a>
+          </div>
+        </Organiser>
+        <Organiser>
+          <img class="organiser-image-border" height="100px" width="100px" src="peter.elger.jpeg" /><br />
+          <h3>Peter Elger</h3>
+          Founder and CEO<br />
+          fourTheorem<br /><br />
+          <div style="float: left; padding-right: 8px;">
+            <a target="_blank" href="https://www.linkedin.com/in/peterelger/">
+              <img class="social-icons" src="linkedin-logo.svg" />
+            </a>
+          </div>
+          <div>
+            <a target="_blank" href="https://twitter.com/pelger">
+              <img class="social-icons" src="twitter-logo.svg" />
+            </a>
+          </div>
+        </Organiser>
+        <Organiser>
+          <img class="organiser-image-border" height="100px" width="100px" src="eugen.serbanescu.jpeg" /><br />
+          <h3>Eugen Serbanescu</h3>
+          Head of Engineering <br />
+          Examfly<br /><br />
+          <div style="float: left; padding-right: 8px;">
+            <a target="_blank" href="https://www.linkedin.com/in/eugen-serbanescu-57a78a51/">
+              <img class="social-icons" src="linkedin-logo.svg" />
+            </a>
+          </div> 
+          <div><a target="_blank" href="https://twitter.com/88_eugen">
+            <img class="social-icons" src="twitter-logo.svg" />
+          </a>
+        </div>
+        </Organiser>
+        <Organiser>
+          <img class="organiser-image-border" height="100px" width="100px" src="luciano-mammino.jpeg" /><br />
+          <h3>Luciano Mammino</h3>
+          Senior Architect<br />
+          fourTheorem<br /><br />
+          <div style="float: left; padding-right: 8px;">
+            <a target="_blank" href="https://www.linkedin.com/in/lucianomammino/">
+              <img class="social-icons" src="linkedin-logo.svg" />
+            </a>
+          </div>
+          <div>
+            <a target="_blank" href="https://twitter.com/loige">
+              <img class="social-icons" src="twitter-logo.svg" />
+            </a>
+          </div>
+        </Organiser>
+        <Organiser>
+          <img class="organiser-image-border" height="100px" width="100px" src="megan.davies.jpeg" /><br />
+          <h3>Megan Davies</h3>
+          Senior Marketing Manager<br />
+          Fastly<br /><br />
+          <div style="float: left; padding-right: 8px;">
+            <a target="_blank" href="https://www.linkedin.com/in/megan-e-davies/">
+              <img class="social-icons" src="linkedin-logo.svg" />
+            </a>
+          </div>
+        </Organiser>
+        <Organiser>
+          <img class="organiser-image-border" height="100px" width="100px" src="anton.whalley.jpeg" /><br />
+          <h3>Anton Whalley</h3>
+          Senior Technology Partner Specialist<br />
+          IBM<br /><br />
+          <div class="organiser-social">
+            <a target="_blank" href="https://www.linkedin.com/in/antonwhalley/">
+              <img class="social-icons" src="linkedin-logo.svg" />
+            </a>
+          </div>
+        </Organiser>
+      </div>
+    </div>
+  </section>
+  <!--  
+
+    This is the Counters section and is edited in the Counters.astro file under components
+
+  -->
+  <!-- <section class="mt-24 mb-24">
+    <div class="container">
+      <h2 class="mb-16 text-5xl">Counters</h2>
+      <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4">
+        <Counter count="130" title="Stars" sub="On GitHub" />
+        <Counter count="17" title="Accessible" sub="Components" />
+        <Counter count="500" title="Commits" sub="Merged" />
+        <Counter count="18+" title="Months" sub="Since launch" />
+      </div>
+    </div>
+  </section>
+</DefaultLayout> -->
+  <!--  
+
+    This is the style sheet for this page
+
+  -->
+<style lang="scss">
+.call-to-action {
+    color: var(--neutral-900);
+    // background-image: linear-gradient(to right, #009a49, #ffffff, #f58220);
+    background-image: linear-gradient(to right, #88b8fd, #ffffff, #88b8fd);
+  }
+
+  .speaker-image-border {
+    border-radius: 25px; 
+    border: 5px solid #88b8fd; 
+    padding: 3px;
+  } 
+
+  .organiser-image-border {
+    border-radius: 25px; 
+    border: 5px solid #88b8fd; 
+    padding: 3px;
+  } 
+
+  .organiser-social {
+    float: left; 
+    padding-right: 8px;
+  }
+
+  .social-icons {
+    height: 25px;
+    width: 25px;
+  }
+
+  .call-to-action a:not(button),
+  .call-to-action a:not(button):visited {
+    padding: 1rem;
+    color: var(--neutral-900);
+    font-weight: bold;
+    border: 3px solid var(--neutral-900);
+    border-radius: 3px;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+
+    &:where(:hover, :focus) {
+      color: var(--neutral-100);
+      background-color: var(--neutral-900);
+      text-decoration: underline;
+    }
+  }
+</style>

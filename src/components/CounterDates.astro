@@ -1,0 +1,18 @@
+---
+const { impdate, datedis } = Astro.props
+---
+
+<div class="animate text-center">
+  <p class="text-2xl font-bold">{impdate}</p>
+  <p class="text-xl font-semibold">{datedis}</p>
+</div>
+  <!--  
+
+    This is the style sheet for this page
+
+  -->
+<style lang="scss">
+  div > p:first-child {
+    color: var(--action-color);
+  }
+</style>

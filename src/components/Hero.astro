@@ -1,0 +1,92 @@
+---
+import { Icon } from 'astro-icon'
+
+const { src = '/dublin-unicorn-mascot-hero.png' } = Astro.props
+---
+
+<section class="hero my-24">
+  <div class="container">
+    <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
+      <div class="flex flex-col items-center gap-8 md:items-start">
+        <h1 class="text-center text-4xl md:text-left lg:text-5xl">
+          <slot>
+            <span class="text-gradient">ServerlessDays Dublin</span>
+          </slot><br />
+          <slot><span class="text-tagline"><span class="text-highlight">One</span> Day, <span class="text-highlight">One</span> Track,<span class="text-highlight">One</span> Community</span></slot><br /><br />
+          <slot>
+            <span class="text-3xl">23 August 2023<br />
+            The Guinness Storehouse, <br />
+            St. James's Gate, Dublin 8</span>
+          </slot>
+        </h1>
+        <div class="flex flex-col gap-3 min-[50px]:flex-row">
+          <a target="_blank"
+            class="button has-icon color-secondary"
+            href="https://www.eventbrite.com/e/serverlessdays-dublin-2023-tickets-562937881357"
+          >
+            <Icon pack="ion" name="ticket-outline" />
+            Reserve your spot
+          </a>
+        </div>
+      </div>
+      <img class="hidden lg:block" src={src} alt="" decoding="async" />
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <slot><span class="text-welcome"><i>Céad míle fáilte</i> and welcome to ServerlessDays Dublin</span></slot><br />
+  </div>
+</section>
+  <!--  
+
+    This is the style sheet for this page
+
+  -->
+<style lang="scss">
+  .text-welcome {
+    font-family: 'Open Sans';
+    src: local('Open Sans ExtraBold'), local('OpenSans-ExtraBold'), url('/fonts/OpenSans-ExtraBold.woff2') format('woff2'),
+    url('/fonts/OpenSans-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+    font-size: 2.67em;
+    margin-left: 14px;
+  }
+
+  .text-tagline {
+    font-family: 'Open Sans';
+    src: local('Open Sans ExtraBold'), local('OpenSans-ExtraBold'), url('/fonts/OpenSans-ExtraBold.woff2') format('woff2'),
+    url('/fonts/OpenSans-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+    font-size: 0.595em;
+  }
+
+  .text-gradient {
+    background: linear-gradient(315deg, var(--secondary-100) 35%, var(--secondary-100));
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-highlight {
+    color: #88b8fd;
+  }
+
+  :global(.darkmode .text-gradient) {
+    background: linear-gradient(315deg, var(--primary-100) 35%, var(--secondary-100));
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  :global(.darkmode .text-gradient-secondary) {
+    background: linear-gradient(315deg, var(--dublin-orange-100) 45%, var(--dublin-primary-100));
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>

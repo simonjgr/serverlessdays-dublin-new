@@ -1,0 +1,287 @@
+---
+import CallToAction from './CallToAction.astro'
+// import FooterLogo from './FooterLogo.astro'
+import FooterNavigation from './FooterNavigation.astro'
+
+const currentYear = new Date().getFullYear()
+---
+
+<footer>
+  <CallToAction />
+  <section>
+    <div class="container-mascots">
+      <div class="grid grid-cols-1 gap-0 sm:grid-cols-1 md:grid-cols-7">
+        <div>
+          <img class="footer-mascot-svg" src="/anteater-mascot.svg" />
+        </div>
+        <div>
+          <img class="footer-mascot-svg" src="/unicorn_mascot.svg" />
+        </div>
+        <div>
+          <img class="footer-mascot-svg" src="/octo-mascot.svg" />
+        </div>
+        <div>
+          <img class="footer-mascot-svg" src="/dino-mascot.svg" />
+        </div>
+        <div>
+          <img class="footer-mascot-svg" src="/moth-mascot.svg" />
+        </div>
+        <div>
+          <img class="footer-mascot-svg" src="/serverless-mascot.svg" />
+        </div>
+        <div>
+          <img class="footer-mascot-svg" src="/owl-mascot.svg" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="my-8">
+    <div class="container">
+      <FooterNavigation>
+        <li class="menu-item">
+          <a href="/">Home</a>
+        </li>
+        <li class="menu-item">
+          <a href="/about/">About</a>
+        </li>
+        <li class="menu-item">
+          <a href="#speakeers">Speakers</a>
+        </li>
+        <li class="menu-item">
+          <a href="#sponsors">Sponsors</a>
+        </li>
+        <li class="menu-item">
+          <a href="#organisers">Organisers</a>
+        </li>
+        <!-- <li class="menu-item">
+          <a href="/blog/">News</a>
+        </li>
+        <li class="menu-item">
+          <a href="/workshops/">Workshops</a>
+        </li> -->
+        <li class="menu-item">
+          <a href="/code-of-conduct/">Code of Conduct</a>
+        </li>
+      </FooterNavigation>
+    </div>
+  </section>
+  <section>
+    <div class="container-social">
+      <div class="grid grid-cols-1 gap-0 sm:grid-cols-1 md:grid-cols-6">
+        <div>
+          <a target="_blank" href="https://www.facebook.com/ServerlessDUB/"><img  alt="ServerlessDays Dublin - Facebook Icon" class="footer-social-media" src="/facebook-logo.svg" /></a>
+        </div>
+        <div>
+          <a target="_blank" href="https://mobile.twitter.com/serverlessdub/"><img alt="ServerlessDays Dublin - Twitter Icon" class="footer-social-media" src="/twitter-logo.svg" /></a>
+        </div>
+        <div>
+          <a target="_blank" href="https://www.linkedin.com/company/serverlessdays-dublin/"><img alt="ServerlessDays Dublin - LinkedIn Icon" class="footer-social-media" src="/linkedin-logo.svg" /></a>
+        </div>
+        <div>
+          <a target="_blank" href=""><img alt="ServerlessDays Dublin - Instagram Icon" class="footer-social-media" src="/instagram-logo.svg" /></a>
+        </div>
+        <div>
+          <a target="_blank" href="https://www.youtube.com/@ServerlessDUB/"><img alt="ServerlessDays Dublin - YouTube Channel Icon" class="footer-social-media" src="/youtube-logo.svg" /></a>
+        </div>
+        <div>
+          <a target="_blank" href="https://github.com/serverlessdays-dublin"><img alt="ServerlessDays Dublin - GitHub Icon" class="footer-social-media" src="/github-logo.svg" /></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="my-8">
+    <div class="container">
+      <div class="footer-copyright">
+        &copy; {currentYear} - ServerlessDays Dublin <a target="_blank" href="https://astro.build/">Astro</a>
+      </div>
+    </div>
+  </section>
+</footer>
+  <!--  
+
+    This is the style sheet for this page
+
+  -->
+<style lang="scss">
+  @use '../assets/scss/base/breakpoint' as *;
+  @use '../assets/scss/base/outline' as *;
+  .footer-mascot-svg {
+      height: 5em;
+      margin: auto;
+    }
+
+  .footer-social-media {
+      height: 1.5em;
+      margin: auto;
+  }
+
+  .footer-copyright {
+    text-align: center;
+  }
+
+  #main-navigation {
+    > .container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    &.is-desktop {
+      .desktop-menu {
+        visibility: visible;
+        position: static;
+      }
+
+      .mobile-menu {
+        display: none;
+      }
+
+    }
+
+    &.is-mobile {
+      flex-direction: column;
+
+      .mobile-menu {
+        display: none;
+
+        &.show {
+          display: block;
+        }
+      }
+
+      .desktop-menu {
+        visibility: hidden;
+        z-index: -99;
+        position: absolute;
+        left: 0;
+      }
+
+      .responsive-toggle {
+        display: block;
+      }
+    }
+
+    .wrapper {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    nav {
+      > ul {
+        display: flex;
+        gap: 1.5rem;
+        list-style-type: none;
+
+        a,
+        button {
+          text-decoration: none;
+          font-size: 1.125rem;
+          line-height: 1.6875rem;
+          transition: color 0.15s ease-in-out;
+        }
+
+        // a:hover,
+        // a:focus,
+        // .is-active,
+        // .has-dropdown > button:hover,
+        // .has-dropdown > button:focus {
+        //   text-decoration: underline;
+        //   text-decoration-thickness: 1px;
+        //   text-decoration-style: wavy;
+        //   text-underline-offset: 7px;
+        // }
+
+        a:hover,
+        a:focus,
+        // .is-active,
+        .has-dropdown > button:hover,
+        .has-dropdown > button:focus {
+          font-weight: bold;
+        }
+      }
+    }
+
+    .mobile-menu {
+      flex-basis: 100%;
+      padding: 2rem 0;
+
+      > ul {
+        flex-direction: column;
+
+        ul {
+          position: relative;
+          margin-top: 1rem;
+        }
+      }
+
+      a,
+      button {
+        display: block;
+        width: 100%;
+        padding: 0.5rem 0;
+      }
+    }
+
+    .has-dropdown {
+      position: relative;
+
+      > button {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0;
+        margin-top: -1px;
+        border: none;
+        color: var(--action-color);
+
+        &:hover {
+          color: var(--action-color-state);
+
+          &::after {
+            border-color: var(--action-color-state);
+          }
+        }
+
+        &::after {
+          content: '';
+          width: 0.85rem;
+          height: 0.75em;
+          margin-top: -0.25rem;
+          border-style: solid;
+          border-width: 0.2em 0.2em 0 0;
+          border-color: var(--action-color);
+          transform: rotate(135deg);
+        }
+
+        &.show {
+          &::after {
+            margin-top: 0.25rem;
+            transform: rotate(-45deg);
+          }
+
+          ~ ul {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+          }
+        }
+      }
+
+      ul {
+        display: none;
+        position: absolute;
+        z-index: 100;
+        min-width: 260px;
+        top: 125%;
+        right: 0;
+        bottom: auto;
+        left: 0;
+        padding: 1rem;
+        background-color: var(--neutral-background);
+        border: 2px solid black;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+  </style>
